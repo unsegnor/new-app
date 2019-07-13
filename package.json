@@ -5,11 +5,25 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@stryker-mutator/core": "^2.0.2",
+    "@stryker-mutator/javascript-mutator": "^2.0.2",
+    "@stryker-mutator/mocha-framework": "^2.0.2",
+    "@stryker-mutator/mocha-runner": "^2.0.2",
     "chai": "^4.2.0",
-    "cucumber": "^5.0.2"
+    "cucumber": "^5.0.2",
+    "mocha": "^6.1.4",
+    "release-it": "^12.3.3"
   },
   "scripts": {
-    "test": "cucumber-js"
+    "release": "release-it",
+    "test": "npm run test-mocha && npm run test-cucumber",
+    "test-mocha": "npm run test-doubles && npm run test-domain && npm run test-adapters && npm run test-integration && npm run test-mutation",
+    "test-domain": "mocha domain --recursive",
+    "test-doubles": "mocha test-doubles --recursive",
+    "test-adapters": "mocha adapters --recursive",
+    "test-integration": "mocha test-integration --recursive",
+    "test-mutation": "npx stryker run",
+    "test-cucumber": "cucumber-js"
   },
   "repository": {
     "type": "git",
