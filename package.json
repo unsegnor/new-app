@@ -5,14 +5,14 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "@stryker-mutator/core": "^2.0.2",
-    "@stryker-mutator/javascript-mutator": "^2.0.2",
-    "@stryker-mutator/mocha-framework": "^2.0.2",
-    "@stryker-mutator/mocha-runner": "^2.0.2",
+    "@stryker-mutator/core": "^2.4.0",
+    "@stryker-mutator/javascript-mutator": "^2.4.0",
+    "@stryker-mutator/mocha-framework": "^2.4.0",
+    "@stryker-mutator/mocha-runner": "^2.4.0",
     "chai": "^4.2.0",
-    "cucumber": "^5.0.2",
-    "mocha": "^6.1.4",
-    "release-it": "^12.3.3"
+    "cucumber": "^5.1.0",
+    "mocha": "^6.2.2",
+    "release-it": "^12.4.3"
   },
   "scripts": {
     "release": "release-it",
