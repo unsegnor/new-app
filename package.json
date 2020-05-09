@@ -23,7 +23,9 @@
     "test-adapters": "mocha adapters --recursive",
     "test-integration": "mocha test-integration --recursive",
     "test-mutation": "npx stryker run",
-    "test-cucumber": "cucumber-js"
+    "test-cucumber": "cucumber-js",
+    "configure-deployment": "gem install travis && travis setup npm",
+    "patch": "npm version patch && git push --follow-tags"
   },
   "repository": {
     "type": "git",

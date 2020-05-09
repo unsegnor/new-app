@@ -1,5 +1,12 @@
 language: node_js
-node_js:
-    node
-script:
-    npm test
+node_js: node
+script: npm test
+deploy:
+  provider: npm
+  email: lacuentadevictor@gmail.com
+  api_key:
+    secure: HpzfGy3SY5Bww0q2ofMh7av5ge7Re6wUg932+msGJr8nvkJg0eLqHcbAEU4lXujw5BG2YG5Z0eL8prDZSV90JJPtxQUhbaW2i8sTL1zVEjyw0YNif6UbCRFvxvyfDjXn6Acp/pAgNzqc/bHa4Jjgt0Lz9LCIhCN5NuFr72cW083BU3V6QkevWi/n2jm+IGuho/VqTcafJAXWJXtljtB10hTwk/V1B0vHDooJh2bDc3lGvP//lptRoNk9lC7DH0Fyy05wdHZ+RIOV9bvp5q58Rjj10+PBUUhPSZibJ6ci6QCu6hUkKAjX46/OHLOnpu3Wg5OcQMe+Eye9ruCcoEbDh/fqOi8hWgn9gweGesDVAC5MxhrrMWeXYeBXUgiGYuy3rxXpsMUnQ8YDNdB7gipU/gGj0BIxcLrR90l2si4sdEHEagLzj/yUFmCn/fFnUgjNHv72TPx+mzprYqhIqPA2Bv+sFdDO1ziYjkoz1K8TJltmSjFKx27aq1cI/JZ534yL5EvcQ7r7Ka7m5V2RiWy6lhY8C2fQ2KvW+BBsYfVxY66ybkpzm4iZeekxfDq7g3Gb/+LUr0znJjCgR5BNqn7PY1d+h25QtfWyUpluRu+O4hohWLBDN4PoJhVWH/zWOl4ykeaQgT9N/Z1RukqRjfz70Jlc/QPqrrHPJSR+0NbGrK8=
+  on:
+    tags: true
+    repo: unsegnor/new-app
+  skip_cleanup: 'true'
