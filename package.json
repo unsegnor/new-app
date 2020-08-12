@@ -25,7 +25,8 @@
     "test-mutation": "npx stryker run",
     "test-cucumber": "cucumber-js",
     "configure-deployment": "gem install travis && travis setup npm",
-    "patch": "npm version patch && git push --follow-tags"
+    "patch": "npm version patch && git push --follow-tags",
+    "minor": "npm version minor && git push --follow-tags"
   },
   "repository": {
     "type": "git",
