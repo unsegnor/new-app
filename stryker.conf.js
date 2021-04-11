@@ -1,12 +1,8 @@
-module.exports = function(config) {
-  config.set({
-    mutator: "javascript",
+module.exports = {
     packageManager: "npm",
     reporters: ["clear-text", "progress"],
     testRunner: "mocha",
-    transpilers: [],
-    testFramework: "mocha",
-    coverageAnalysis: "perTestInIsolation",
+    coverageAnalysis: "perTest",
     mochaOptions:{
       spec: ['domain/*.spec.js']
     },
@@ -15,5 +11,4 @@ module.exports = function(config) {
       '!domain/*.port.js',
       '!domain/*.factory.js'],
     maxConcurrentTestRunners: 2
-  });
-};
+}
