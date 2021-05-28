@@ -4,8 +4,8 @@
   "description": "New application schema",
   "main": "index.js",
   "devDependencies": {
-    "@stryker-mutator/core": "5.0.0",
-    "@stryker-mutator/mocha-runner": "5.0.0",
+    "@stryker-mutator/core": "5.0.1",
+    "@stryker-mutator/mocha-runner": "5.0.1",
     "chai": "4.3.4",
     "cucumber": "6.0.5",
     "mocha": "8.4.0",
