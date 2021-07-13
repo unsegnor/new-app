@@ -1,6 +1,6 @@
 {
   "name": "new-app",
-  "version": "1.1.16",
+  "version": "1.1.17",
   "description": "New application schema",
   "main": "index.js",
   "devDependencies": {
