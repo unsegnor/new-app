@@ -8,11 +8,9 @@
     "@stryker-mutator/mocha-runner": "5.3.0",
     "chai": "4.3.4",
     "cucumber": "6.0.5",
-    "mocha": "9.0.3",
-    "release-it": "14.11.4"
+    "mocha": "9.0.3"
   },
   "scripts": {
-    "release": "release-it",
     "test": "npm run test-mocha && npm run test-cucumber",
     "test-mocha": "npm run test-doubles && npm run test-domain && npm run test-adapters && npm run test-integration && npm run test-mutation",
     "test-domain": "mocha domain --recursive",
@@ -20,10 +18,7 @@
     "test-adapters": "mocha adapters --recursive",
     "test-integration": "mocha test-integration --recursive",
     "test-mutation": "npx stryker run",
-    "test-cucumber": "cucumber-js",
-    "configure-deployment": "gem install travis && travis setup npm --com",
-    "patch": "npm version patch && git push --follow-tags",
-    "minor": "npm version minor && git push --follow-tags"
+    "test-cucumber": "cucumber-js"
   },
   "repository": {
     "type": "git",
@@ -36,8 +31,7 @@
     "BDD",
     "gherkins",
     "cucumber",
-    "CI",
-    "travis"
+    "CI"
   ],
   "author": "Víctor Calatayud Asensio",
   "license": "GPL-3.0-or-later",
