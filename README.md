@@ -7,23 +7,14 @@ New application schema with:
 - Unit tests
 - Mutation testing
 - Ports and adapters templates
-- Travis yaml
-- Script for configuring npm deployment
+- Github actions for CI
 
 ## Getting started
 1. Rename the product name on package.json
 2. Set the repository, bugs and homepage urls
 3. Set the keywords, description and author
-
-## Seting npm deployment
-
-    npm run configure-deployment
+4. Set a repository secret in GitHub called NPM_TOKEN with an automation token to publish
 
 ## Run all tests
 
     npm test
-
-## Publish a patch on npm
-Once you have made and commited your changes run:
-
-    npm run patch
