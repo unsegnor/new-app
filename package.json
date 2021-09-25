@@ -8,7 +8,7 @@
     "@stryker-mutator/mocha-runner": "5.4.0",
     "chai": "4.3.4",
     "cucumber": "6.0.5",
-    "mocha": "9.1.1"
+    "mocha": "9.1.2"
   },
   "scripts": {
     "test": "npm run test-mocha && npm run test-cucumber",
