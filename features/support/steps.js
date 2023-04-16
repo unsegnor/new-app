@@ -1,5 +1,5 @@
 // features/support/steps.js
-const { Given, When, Then } = require('cucumber')
+const { Given, When, Then } = require('@cucumber/cucumber')
 const { expect } = require('chai')
 
 Given('a variable set to {int}', function (number) {
