@@ -3,7 +3,7 @@ const {expect} = require('chai');
 const uuid = require('uuid');
 const axios = require('axios');
 
-describe('Docker container test', function () {
+describe('Docker compose container test', function () {
   this.timeout(300000);
 
     function delay(ms) {
@@ -25,37 +25,26 @@ describe('Docker container test', function () {
         await runCommand('docker build -t auto-test-image .', 'built image auto-test-image')
     }
 
-    async function runContainer(containerId){
-        await runCommand(`docker run -d -p 3000:3000 --name ${containerId} auto-test-image`, `created container ${containerId}`)
-        await delay(1000) //TODO: use docker-compose up -d --wait healthy instead
-        // await runCommand(`docker logs ${containerId}`, `logs for container ${containerId}: \n`) //TODO: show the logs and fail in case there are errors
-    }
-
     async function startApp(containerId){
-        await runCommand(`docker-compose up -d --build --wait`, `composed application ${containerId}`)
-    }
-
-    async function removeContainer(containerId){
-        await runCommand(`docker rm -f ${containerId}`, `removed container ${containerId}`)
+        await runCommand(`export CONTAINER_NAME=${containerId} && docker-compose up -d --build --wait`, `composed application ${containerId}`)
     }
 
     async function removeApp(containerId){
-        await runCommand(`docker-compose down`, `application removed ${containerId}`)
+        await runCommand(`export CONTAINER_NAME=${containerId} && docker-compose down`, `application removed ${containerId}`)
     }
 
   before(async () => { //beforeAll
     this.containerId = uuid.v4()
-    // await buildImage()
-    // await runContainer(this.containerId)
     await startApp(this.containerId)
   });
 
   after(async () => { //afterAll
-    //await removeContainer(this.containerId)
     await removeApp(this.containerId)
   });
 
   it('should build and run the container', () => {});
+
+  it('should run containers in parallel')
 
   xit('play with the container before removing it', async () => {
     console.log("container deployed")
