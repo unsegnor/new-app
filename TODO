@@ -1,0 +1,4 @@
+Add property based testing
+Make a UI to create tests (read and write on a local file)
+Add component tests against docker container
+Deploy docker container as a lambda function
