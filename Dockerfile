@@ -5,4 +5,4 @@ RUN npm i
 EXPOSE 3000
 CMD [ "node", "httpapi.js" ]
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 CMD node healthcheck.js
+HEALTHCHECK --interval=1s --timeout=1s --retries=5 CMD [ "node", "healthcheck.js" ]
