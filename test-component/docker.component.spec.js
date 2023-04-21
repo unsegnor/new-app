@@ -22,7 +22,7 @@ describe('Docker container test', function () {
     }
 
     async function buildImage(){
-        await runCommand('docker build -t auto-test-image .', 'built image auto-test-image')
+        await runCommand('docker build -t auto-test-image -f ./http-api/Dockerfile .', 'built image auto-test-image')
     }
 
     async function runContainer(containerId){
