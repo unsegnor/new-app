@@ -29,6 +29,11 @@ jobs:
           node-version: ${{ steps.read_nvmrc.outputs.node_version }}
           registry-url: 'https://registry.npmjs.org'
       
+      - name: Check docker-compose is installed
+        id: check-docker-compose
+        run: |
+          docker-compose -v
+
       #Run tests
       - run: npm ci
       - run: npm test
