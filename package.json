@@ -1,6 +1,6 @@
 {
   "name": "new-app-template",
-  "version": "1.1.71",
+  "version": "1.2.0",
   "description": "New application schema",
   "main": "index.js",
   "devDependencies": {
@@ -12,7 +12,8 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "test": "npm run test-mocha && npm run test-cucumber",
+    "pre-test": "npm run build-image",
+    "test": "npm run test-mocha && npm run test-cucumber && npm run test-component",
     "test-mocha": "npm run test-doubles && npm run test-domain && npm run test-adapters && npm run test-integration && npm run test-mutation",
     "test-domain": "mocha domain --recursive",
     "test-doubles": "mocha test-doubles --recursive",
@@ -22,6 +23,7 @@
     "test-mutation": "npx stryker run",
     "test-cucumber": "cucumber-js",
     "local-api": "node httpapi.js",
+    "build-image": "docker build -t api-test-image .",
     "container": "docker build -t container-test-image . && docker run -d -p 3000:3000 --name test-container container-test-image",
     "compose": "CONTAINER_NAME=dev-api && docker-compose up -d --wait",
     "container-remove":"docker rm -f test-container"

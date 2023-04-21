@@ -21,10 +21,6 @@ describe('Docker compose container test', function () {
         })
     }
 
-    async function buildImage(){
-        await runCommand('docker build -t auto-test-image .', 'built image auto-test-image')
-    }
-
     async function startApp(containerId){
         await runCommand(`export CONTAINER_NAME=${containerId} && docker-compose up -d --build --wait`, `composed application ${containerId}`)
     }

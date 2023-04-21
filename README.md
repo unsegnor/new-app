@@ -8,6 +8,7 @@ New application schema with:
 - Mutation testing
 - Ports and adapters templates
 - Github actions for CI
+- Component tests using docker containers
 
 ## Getting started
 1. Rename the product name on package.json

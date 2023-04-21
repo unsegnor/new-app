@@ -4,3 +4,5 @@ Deploy docker container as a lambda function
 Write reusable test cases and reuse for component and unit testing
 Use docker-compose to wait for healthy status instead of waiting a fixed time for the container to be healthy
 Test deploying the application to kubernetes
+Add component tests to PR validation
+Use node version from nvmrc file
