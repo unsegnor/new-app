@@ -12,21 +12,21 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "test": "npm run test-mocha && npm run test-cucumber && npm run test-component",
+    "test": "npm run test-mocha && npm run test-cucumber && npm run test-api",
     "test-mocha": "npm run test-doubles && npm run test-domain && npm run test-adapters && npm run test-integration && npm run test-mutation",
     "test-domain": "mocha domain --recursive",
     "test-doubles": "mocha test-doubles --recursive",
     "test-adapters": "mocha adapters --recursive",
     "test-integration": "mocha test-integration --recursive",
-    "test-component": "npm run build-image && CONTAINER_NAME=auto-test-api && mocha test-component --recursive",
+    "test-api": "npm run build-api-image && CONTAINER_NAME=api-auto-test-container && mocha test-component --recursive",
     "test-mutation": "npx stryker run",
     "test-cucumber": "cucumber-js",
     "local-api": "node httpapi.js",
-    "build-image": "docker build -t api-test-image -f ./http-api/Dockerfile .",
-    "run-api-container": "docker build -t container-test-image -f ./http-api/Dockerfile . && docker run -d -p 3000:3000 --name test-container container-test-image",
-    "container-logs": "docker logs test-container",
-    "run-container-app": "CONTAINER_NAME=dev-api && docker-compose up -d --wait",
-    "remove-api-container":"docker rm -f test-container"
+    "build-api-image": "docker build -t api-test-image -f ./http-api/Dockerfile .",
+    "api-container": "npm run build-api-image && docker run -d -p 3000:3000 --name api-test-container api-test-image",
+    "api-container-logs": "docker logs api-test-container",
+    "container-app": "CONTAINER_NAME=dev-api && docker-compose up -d --wait",
+    "remove-api-container":"docker rm -f api-test-container"
   },
   "repository": {
     "type": "git",
