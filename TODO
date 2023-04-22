@@ -2,12 +2,9 @@ Add property based testing
 Make a UI to create tests (read and write on a local file)
 Deploy docker container as a lambda function (create a lambda folder with Dockerfile and index.js)
 Write reusable test cases and reuse for component and unit testing
-Use docker-compose to wait for healthy status instead of waiting a fixed time for the container to be healthy
 Test deploying the application to kubernetes
-Add component tests to PR validation
-Use node version from nvmrc file (I think renovate will update the FROM version in the Dockerfile)
+Use node version from nvmrc file (I think it is not needed as renovate will update the FROM version in the Dockerfile)
 Ensure we use the same commands to build the container for test and manually to debug
-Pre build the image in pre-test or post-install
 Create a github action to share among all the repos
 Should we use docker-bench-security? seems like it is evaluating my host instead of the Dockerfile: https://github.com/docker/docker-bench-security
 Measure coverage from component tests
