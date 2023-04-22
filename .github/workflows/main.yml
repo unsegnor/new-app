@@ -28,7 +28,15 @@ jobs:
         with:
           node-version: ${{ steps.read_nvmrc.outputs.node_version }}
           registry-url: 'https://registry.npmjs.org'
-      
+
+      - name: Install Compose
+        uses: ndeloof/install-compose-action@v0.0.1
+        with:
+          legacy: true    # will also install in PATH as `docker-compose`
+
+      - name: Check docker-compose is installed
+        run: docker-compose -v
+
       #Run tests
       - run: npm ci
       - run: npm test

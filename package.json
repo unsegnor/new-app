@@ -1,24 +1,32 @@
 {
   "name": "new-app-template",
-  "version": "1.1.71",
+  "version": "2.0.0",
   "description": "New application schema",
   "main": "index.js",
   "devDependencies": {
+    "@cucumber/cucumber": "^9.1.0",
     "@stryker-mutator/core": "6.4.2",
     "@stryker-mutator/mocha-runner": "6.4.2",
     "chai": "4.3.7",
     "mocha": "10.2.0",
-    "@cucumber/cucumber": "^9.1.0"
+    "uuid": "^9.0.0"
   },
   "scripts": {
-    "test": "npm run test-mocha && npm run test-cucumber",
+    "test": "npm run test-mocha && npm run test-cucumber && npm run test-api",
     "test-mocha": "npm run test-doubles && npm run test-domain && npm run test-adapters && npm run test-integration && npm run test-mutation",
     "test-domain": "mocha domain --recursive",
     "test-doubles": "mocha test-doubles --recursive",
     "test-adapters": "mocha adapters --recursive",
     "test-integration": "mocha test-integration --recursive",
+    "test-api": "npm run build-api-image && CONTAINER_NAME=api-auto-test-container && mocha test-component --recursive",
     "test-mutation": "npx stryker run",
-    "test-cucumber": "cucumber-js"
+    "test-cucumber": "cucumber-js",
+    "local-api": "node ./http-api/start.js",
+    "build-api-image": "docker build -t api-test-image -f ./http-api/Dockerfile .",
+    "api-container": "npm run build-api-image && docker run -d -p 3000:3000 --name api-test-container api-test-image",
+    "api-container-logs": "docker logs api-test-container",
+    "container-app": "CONTAINER_NAME=dev-api && docker-compose up -d --wait",
+    "remove-api-container":"docker rm -f api-test-container"
   },
   "repository": {
     "type": "git",
@@ -38,5 +46,9 @@
   "bugs": {
     "url": "https://github.com/unsegnor/new-app/issues"
   },
-  "homepage": "https://github.com/unsegnor/new-app#readme"
+  "homepage": "https://github.com/unsegnor/new-app#readme",
+  "dependencies": {
+    "axios": "^1.3.5",
+    "express": "^4.18.2"
+  }
 }

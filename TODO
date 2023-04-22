@@ -1,4 +1,10 @@
 Add property based testing
 Make a UI to create tests (read and write on a local file)
-Add component tests against docker container
-Deploy docker container as a lambda function
+Deploy docker container as a lambda function (create a lambda folder with Dockerfile and index.js)
+Test deploying the application to kubernetes
+Use node version from nvmrc file (I think it is not needed as renovate will update the FROM version in the Dockerfile)
+Ensure we use the same commands to build the container for test and manually to debug
+Create a github action to share among all the repos
+Should we use docker-bench-security? seems like it is evaluating my host instead of the Dockerfile: https://github.com/docker/docker-bench-security
+Measure coverage from component tests
+Use docker containers also for dev environment
