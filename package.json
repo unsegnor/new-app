@@ -18,7 +18,7 @@
     "test-doubles": "mocha test-doubles --recursive",
     "test-adapters": "mocha adapters --recursive",
     "test-integration": "mocha test-integration --recursive",
-    "test-api": "npm run build-api-image && CONTAINER_NAME=api-auto-test-container && mocha test-component --recursive",
+    "test-api": "npm run build-api-image && CONTAINER_NAME=api-auto-test-container && mocha test-http-api --recursive",
     "test-mutation": "npx stryker run",
     "test-cucumber": "cucumber-js",
     "local-api": "node ./http-api/start.js",
