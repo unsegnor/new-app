@@ -13,7 +13,7 @@ module.exports = function(){
         });
       
         it('container is up and running', async () => {
-          await runCommand(`curl http://localhost:3000/health`, 'api is healthy')
+          await runCommand(`curl http://localhost:3000/health`, 'check api health')
         });
     })
 }
