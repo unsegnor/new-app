@@ -12,14 +12,13 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "pre-test": "npm run build-image",
     "test": "npm run test-mocha && npm run test-cucumber && npm run test-component",
     "test-mocha": "npm run test-doubles && npm run test-domain && npm run test-adapters && npm run test-integration && npm run test-mutation",
     "test-domain": "mocha domain --recursive",
     "test-doubles": "mocha test-doubles --recursive",
     "test-adapters": "mocha adapters --recursive",
     "test-integration": "mocha test-integration --recursive",
-    "test-component": "CONTAINER_NAME=auto-test-api && mocha test-component --recursive",
+    "test-component": "npm run build-image && CONTAINER_NAME=auto-test-api && mocha test-component --recursive",
     "test-mutation": "npx stryker run",
     "test-cucumber": "cucumber-js",
     "local-api": "node httpapi.js",
