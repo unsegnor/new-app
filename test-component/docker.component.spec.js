@@ -1,25 +1,12 @@
-const { exec } = require('child_process');
 const {expect} = require('chai');
 const uuid = require('uuid');
 const axios = require('axios');
+const container_test_cases = require('./container-test-cases');
+const runCommand = require('./runCommand');
+const delay = require('./delay');
 
 describe('Docker container test', function () {
   this.timeout(300000);
-
-    function delay(ms) {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-    }
-  
-    async function runCommand(command, reason){
-        return new Promise((resolve, reject) => {
-            exec(command, (error, stdout) => {
-                if (error) return reject(error)
-                console.log(reason)
-                //console.log(stdout)
-                resolve();
-              });
-        })
-    }
 
     async function buildImage(){
         await runCommand('docker build -t auto-test-image -f ./http-api/Dockerfile .', 'built image auto-test-image')
@@ -45,19 +32,9 @@ describe('Docker container test', function () {
     await removeContainer(this.containerId)
   });
 
-  it('should build and run the container', () => {});
+  container_test_cases();
 
-  it('should run containers in parallel')
-
-  xit('play with the container before removing it', async () => {
-    console.log("container deployed")
-    await delay(60000)
-  });
-
-  it('container is up and running', async () => {
-    await runCommand(`curl http://localhost:3000/health`, 'api is healthy')
-  });
-
+  //TODO: use functional test cases with an http api interface
   it('should say hello world', async () => {
     const response = await axios.get('http://localhost:3000/helloworld');
     expect(response.data).to.equal('Hello World!');
