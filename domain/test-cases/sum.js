@@ -13,5 +13,8 @@ module.exports = function(user_interface){
             let result = await user.sum(1,2)
             expect(result).to.equal(3);
         });
+
+
+        it('sum property based'); //https://github.com/dubzzz/fast-check/blob/main/packages/fast-check/documentation/Arbitraries.md#combinators
     })
 }
