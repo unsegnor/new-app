@@ -38,9 +38,6 @@ describe('Docker compose container test', function () {
     await removeApp(this.containerId)
   });
 
-  //TODO: Could be that docker-compose is not installed in github actions?
-  //Installed version is 1.29 we need version 2.0
-
   it('should build and run the container', () => {});
 
   it('should run containers in parallel')

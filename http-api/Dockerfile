@@ -1,4 +1,7 @@
-FROM node:18
+FROM node:18.16.0
+
+# Update npm
+RUN npm i -g npm@9.6.5
 
 # Copy logic and http-api files
 COPY ./http-api ./http-api
