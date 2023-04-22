@@ -10,7 +10,7 @@ module.exports = function(user_interface){
         })
 
         it('basic sum', async () => {
-            var result = await user.sum(1,2)
+            let result = await user.sum(1,2)
             expect(result).to.equal(3);
         });
     })
