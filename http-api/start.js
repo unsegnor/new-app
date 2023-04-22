@@ -1,3 +1,5 @@
+const calculator = require('../domain/calculator')();
+
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 
@@ -6,6 +8,13 @@ app.disable("x-powered-by"); //Disabled for security reasons. See: https://sonar
 
 app.get('/helloworld', (req, res) => {
   res.send('Hello World!');
+});
+
+app.get('/sum', (req, res) => {
+  const a = parseInt(req.query.a);
+  const b = parseInt(req.query.b);
+  const result = calculator.sum(a, b);
+  res.status(200).send(result.toString());
 });
 
 app.get('/health', (req, res) => {

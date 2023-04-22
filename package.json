@@ -21,7 +21,7 @@
     "test-api": "npm run build-api-image && CONTAINER_NAME=api-auto-test-container && mocha test-component --recursive",
     "test-mutation": "npx stryker run",
     "test-cucumber": "cucumber-js",
-    "local-api": "node httpapi.js",
+    "local-api": "node ./http-api/start.js",
     "build-api-image": "docker build -t api-test-image -f ./http-api/Dockerfile .",
     "api-container": "npm run build-api-image && docker run -d -p 3000:3000 --name api-test-container api-test-image",
     "api-container-logs": "docker logs api-test-container",
