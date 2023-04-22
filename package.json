@@ -25,7 +25,7 @@
     "build-image": "docker build -t api-test-image -f ./http-api/Dockerfile .",
     "container": "docker build -t container-test-image -f ./http-api/Dockerfile . && docker run -d -p 3000:3000 --name test-container container-test-image",
     "container-logs": "docker logs test-container",
-    "compose": "CONTAINER_NAME=dev-api && docker-compose up -d --wait",
+    "run-container-app": "CONTAINER_NAME=dev-api && docker-compose up -d --wait",
     "container-remove":"docker rm -f test-container"
   },
   "repository": {
