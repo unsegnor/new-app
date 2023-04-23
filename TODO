@@ -1,6 +1,12 @@
 Add property based testing
 Make a UI to create tests (read and write on a local file)
 Deploy docker container as a lambda function (create a lambda folder with Dockerfile and index.js)
+Show the version of the application in a /version endpoint
+Testing with external dependencies
+Testing with internal state
+Testing updates
+    deploying lambda function (with state)
+    updating a container image? we should take care of transferring the state or reusing or whatever, always through the api of that state?
 Test deploying the application to kubernetes
 Use node version from nvmrc file (I think it is not needed as renovate will update the FROM version in the Dockerfile)
 Ensure we use the same commands to build the container for test and manually to debug
