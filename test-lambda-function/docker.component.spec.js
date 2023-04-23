@@ -1,6 +1,5 @@
 const uuid = require('uuid');
 const {expect} = require('chai');
-//const container_test_cases = require('./container-test-cases');
 const axios = require('axios');
 const runCommand = require('./runCommand');
 const delay = require('./delay');
@@ -37,12 +36,12 @@ describe('Lambda container tests', function () {
   it('should build and run the container', () => {});
 
   it('should respond to invocation', async () => {
-    var response = await axios.post('http://localhost:3000/2015-03-31/functions/function/invocations', '{}')
+    let response = await axios.post('http://localhost:3000/2015-03-31/functions/function/invocations', '{}')
     expect(response.status).to.equal(200)
   })
 
   it('should return content', async () => {
-    var response = await axios.post('http://localhost:3000/2015-03-31/functions/function/invocations', '{}')
+    let response = await axios.post('http://localhost:3000/2015-03-31/functions/function/invocations', '{}')
     expect(response.data).not.to.be.undefined
   })
 
