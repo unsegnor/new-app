@@ -1,6 +1,6 @@
 Add property based testing
 Make a UI to create tests (read and write on a local file)
-Deploy docker container as a lambda function (create a lambda folder with Dockerfile and index.js)
+Deploy docker container as a lambda function (follow this: https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-upload)
 Show the version of the application in a /version endpoint
 Testing with external dependencies
 Testing with internal state
