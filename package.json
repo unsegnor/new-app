@@ -4,6 +4,7 @@
   "description": "New application schema",
   "main": "index.js",
   "dockerHubUsername": "vcalatayud",
+  "awsRegion":"eu-west-3",
   "devDependencies": {
     "@cucumber/cucumber": "^9.1.0",
     "@stryker-mutator/core": "6.4.2",
