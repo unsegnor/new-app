@@ -14,3 +14,4 @@ Create a github action to share among all the repos
 Should we use docker-bench-security? seems like it is evaluating my host instead of the Dockerfile: https://github.com/docker/docker-bench-security
 Measure coverage from component tests
 Use docker containers also for dev environment
+Add tests for published docker images, is it needed?

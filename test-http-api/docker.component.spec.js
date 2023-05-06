@@ -3,7 +3,8 @@ const container_test_cases = require('./container-test-cases');
 const runCommand = require('./runCommand');
 const delay = require('./delay');
 const domain_tests = require('../domain/test-cases/all.js');
-const http_user_interface = require('./http-api-user-interface')()
+const baseUrl = "http://localhost:3000"
+const http_user_interface = require('./http-api-user-interface')({baseUrl})
 
 describe('Docker container test', function () {
   this.timeout(300000);
@@ -32,7 +33,7 @@ describe('Docker container test', function () {
     await removeContainer(this.containerId)
   });
 
-  container_test_cases();
+  container_test_cases({baseUrl});
 
   //TODO: pass a testscenario with preArrange, postArrange, preAct, postAct, preAssert, postAssert methods
   domain_tests(http_user_interface);

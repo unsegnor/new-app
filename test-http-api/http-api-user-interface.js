@@ -1,12 +1,12 @@
 const axios = require('axios');
 
-module.exports = function(){
+module.exports = function({baseUrl}){
     return Object.freeze({
         sum
     })
 
     async function sum(a, b){
-        const response = await axios.get(`http://localhost:3000/sum?a=${a}&b=${b}`);
+        const response = await axios.get(`${baseUrl}/sum?a=${a}&b=${b}`);
         return response.data
     }
 }
