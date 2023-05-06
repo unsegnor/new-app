@@ -66,5 +66,5 @@ jobs:
       - name: Build and push Docker images
         if: github.ref == 'refs/heads/master'
         run: |
-          ./release-docker-folder.sh "http-api"
-          ./release-docker-folder.sh "lambda-function"
+          ./publish-on-docker-hub.sh "http-api"
+          ./publish-on-docker-hub.sh "lambda-function"

@@ -1,7 +1,7 @@
 const runCommand = require('./runCommand');
 const delay = require('./delay');
 
-module.exports = function(){
+module.exports = function({baseUrl}){
     describe('container tests', function(){
         it('should build and run the container', () => {});
     
@@ -13,7 +13,7 @@ module.exports = function(){
         });
       
         it('container is up and running', async () => {
-          await runCommand(`curl http://localhost:3000/health`, 'check api health')
+          await runCommand(`curl ${baseUrl}/health`, 'check api health')
         });
     })
 }
