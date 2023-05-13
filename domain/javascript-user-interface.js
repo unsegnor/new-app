@@ -6,6 +6,7 @@
     An http-api user interface would translate the same action into an http call.
 **/
 
+//TODO: Actually we could replace this one by a package-user-interface and require the index.js file instead of the calculator directly.
 const Calculator = require("./calculator")
 
 module.exports = function(){
