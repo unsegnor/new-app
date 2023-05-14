@@ -1,3 +1,9 @@
+/**
+    In this file we describe the tests in terms of user actions and expectations.
+    We could also talk about situations in the the environment that can't be affected by the user like "today is Monday".
+**/
+
+
 const {expect} = require('chai');
 const User = require('./test-user.js');
 
