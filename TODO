@@ -15,3 +15,11 @@ Should we use docker-bench-security? seems like it is evaluating my host instead
 Measure coverage from component tests
 Use docker containers also for dev environment
 Add tests for published docker images, is it needed?
+
+
+we have a script to deploy into google cloud run
+and tests to check that it is deployed
+but it is very slow to map a new domain
+we need to restructure the tests
+we need a deploy method in javascript that actually deploys
+and remove everything related to azure functions
