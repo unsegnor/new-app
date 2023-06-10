@@ -15,3 +15,20 @@ Should we use docker-bench-security? seems like it is evaluating my host instead
 Measure coverage from component tests
 Use docker containers also for dev environment
 Add tests for published docker images, is it needed?
+
+
+
+
+
+al final los procesos de despliegue son parte del programa
+yo quiero hacer algo, ejecutar un proceso X de modo que al terminar, el usuario pueda ejecutar los tests contra una dirección específica
+
+en realidad por qué quiero desplegar? lo que quiero es que usuarios de diferentes ordenadores puedan acceder a la misma funcionalidad
+que si un usuario realiza una operación 
+
+también quiero que los cambios que haga al proyecto se vean reflejados en un tiempo máximo en las operaciones que hace el usuario
+al final lo que quiero es que los usuarios puedan utilizar la aplicación desde cualquier sitio y que los datos sean consistentes
+claro que si tenemos una aplicación sin estado, necesitamos desplegar? por qué? porque queremos que cualquier humano tenga acceso, incluso si no tiene acceso al código
+sólo con una dirección
+
+
