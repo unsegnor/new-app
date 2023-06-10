@@ -1,26 +1,31 @@
 const uuid = require('uuid');
 const container_test_cases = require('./container-test-cases');
 const runCommand = require('./runCommand');
-const deployment = require('./deployment');
+const programmer = require('./programmer');
 const delay = require('./delay');
 const domain_tests = require('../domain/test-cases/all.js');
 const application_name = require('../package.json').name;
 const domain_name = require('../package.json').domain;
-const baseUrl = `https://${application_name}.${domain_name}`
-const http_user_interface = require('./http-api-user-interface')({baseUrl})
+
+const Http_user_interface = require('./http-api-user-interface')
 
 describe('HttpApi deployment test', function () {
   this.timeout(300000);
+  let http_user_interface;
+  let baseUrl;
 
-  /*before(async () => { //beforeAll
-    this.applicationId = uuid.v4()
-    await deployment.deployHttpApi(this.applicationId)
+  before(async () => { //beforeAll
+    this.applicationName = uuid.v4()
+    baseUrl = `https://test-${this.applicationName}.${domain_name}`
+    http_user_interface = new Http_user_interface({baseUrl})
+
+    await programmer.deployHttpApi(this.applicationName)    
   });
 
   after(async () => { //afterAll
-    await deployment.removeHttpApi(this.applicationId)
+    await programmer.removeHttpApi(this.applicationName)
   });
-*/
+
   container_test_cases({baseUrl});
 
   //TODO: pass a testscenario with preArrange, postArrange, preAct, postAct, preAssert, postAssert methods
