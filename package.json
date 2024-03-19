@@ -1,6 +1,6 @@
 {
   "name": "new-app-template",
-  "version": "3.3.243",
+  "version": "3.3.244",
   "description": "New application schema",
   "main": "index.js",
   "dockerHubUsername": "vcalatayud",
